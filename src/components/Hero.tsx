@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Reveal from "./Reveal";
 import HeroVisual from "./HeroVisual";
 import Blob, { BLOB_PATHS } from "./Blob";
@@ -46,6 +47,19 @@ export default function Hero() {
                 Reliable bookkeeping and accounting for small businesses — clear
                 numbers, fewer headaches, more time to run the company.
               </p>
+            </Reveal>
+            <Reveal delay={0.24}>
+              <div className="hero__cta">
+                <Link href="/contact" className="btn btn--sm">
+                  Book a Free Consultation{" "}
+                  <span className="arr" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
+                <Link href="/services" className="btn btn--ghost btn--sm">
+                  Explore Our Services
+                </Link>
+              </div>
             </Reveal>
           </div>
 

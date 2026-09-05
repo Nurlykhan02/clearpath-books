@@ -297,14 +297,15 @@ body::before {
 }
 
 .btn--ghost {
-  --bg: transparent;
+  --bg: #ffffff;
   --fg: var(--ink);
   border-color: var(--line);
-  box-shadow: none;
+  background: #ffffff;
+  box-shadow: 0 6px 14px -12px rgba(21, 32, 43, 0.22);
 }
 
 .btn--ghost:hover {
-  background: var(--cream-2);
+  background: #ffffff;
   border-color: var(--ink-faint);
   transform: translateY(-1px);
 }
@@ -327,6 +328,17 @@ body::before {
 
 .btn--sage:hover {
   background: #4f5d40;
+}
+
+.btn--sm {
+  min-height: 36px;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.84rem;
+  box-shadow: 0 6px 14px -12px rgba(21, 32, 43, 0.3);
+}
+
+.btn--sm:hover {
+  box-shadow: 0 8px 16px -12px rgba(21, 32, 43, 0.35);
 }
 
 /* Header */
@@ -586,8 +598,14 @@ body::before {
 .hero__cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem;
+  gap: 0.7rem;
   align-items: center;
+  justify-content: flex-start;
+}
+
+.hero__cta .btn {
+  width: auto;
+  flex: 0 0 auto;
 }
 
 .hero__meta {
@@ -901,14 +919,33 @@ html[data-design="minimal"] .hero-visual {
 @media (max-width: 860px) {
   .hero__grid {
     grid-template-columns: 1fr;
-    gap: clamp(24px, 5vw, 40px);
+    gap: clamp(8px, 3vw, 20px);
   }
 
   .hero__visual {
     max-width: min(440px, 100%);
     margin-inline: auto;
+    margin-top: -72px;
     aspect-ratio: 1 / 1;
     width: 100%;
+    transform: translateY(-8px);
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero__copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero__cta {
+    position: relative;
+    z-index: 3;
+  }
+
+  .home-page .hero__visual {
+    margin-top: -80px;
   }
 
   .hero__chip--tl {
@@ -942,12 +979,15 @@ html[data-design="minimal"] .hero-visual {
   }
 
   .hero__cta {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .hero__cta .btn {
-    width: 100%;
+    width: auto;
+    flex: 0 0 auto;
     justify-content: center;
   }
 
@@ -2317,9 +2357,21 @@ html[data-design="minimal"] .hero-visual {
 }
 
 .home-page .hero__lede {
-  margin-bottom: 0;
+  margin-bottom: 1.35rem;
   font-size: clamp(0.98rem, 1.4vw, 1.12rem);
   max-width: 42ch;
+}
+
+.home-page .hero__cta {
+  gap: 0.55rem;
+  justify-content: flex-start;
+}
+
+.home-page .hero__cta .btn {
+  width: auto;
+  padding: 0.48rem 0.9rem;
+  font-size: 0.82rem;
+  min-height: 34px;
 }
 
 .home-page .hero__visual {
@@ -2614,7 +2666,8 @@ html[data-design="minimal"] .hero-visual {
   }
 
   .hero__cta .btn {
-    padding: 0.95rem 1.25rem;
+    width: auto;
+    padding: 0.48rem 0.9rem;
   }
 }
 
