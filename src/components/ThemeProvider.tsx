@@ -49,46 +49,40 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
+function readStoredColors(): ThemeColors {
+  if (typeof window === "undefined") return DEFAULT_THEME;
+  return loadStoredTheme() ?? DEFAULT_THEME;
+}
+
+function readStoredDesign(): DesignVariant {
+  if (typeof window === "undefined") return DEFAULT_DESIGN;
+  return loadStoredDesign() ?? DEFAULT_DESIGN;
+}
+
+function readStoredHeader(): HeaderVariant {
+  if (typeof window === "undefined") return DEFAULT_HEADER;
+  return loadStoredHeader() ?? DEFAULT_HEADER;
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [colors, setColors] = useState<ThemeColors>(DEFAULT_THEME);
-  const [design, setDesignState] = useState<DesignVariant>(DEFAULT_DESIGN);
-  const [header, setHeaderState] = useState<HeaderVariant>(DEFAULT_HEADER);
-  const [ready, setReady] = useState(false);
+  const [colors, setColors] = useState<ThemeColors>(readStoredColors);
+  const [design, setDesignState] = useState<DesignVariant>(readStoredDesign);
+  const [header, setHeaderState] = useState<HeaderVariant>(readStoredHeader);
 
   useEffect(() => {
-    const storedColors = loadStoredTheme();
-    const storedDesign = loadStoredDesign();
-    const storedHeader = loadStoredHeader();
-    const initialColors = storedColors ?? DEFAULT_THEME;
-    const initialDesign = storedDesign ?? DEFAULT_DESIGN;
-    const initialHeader = storedHeader ?? DEFAULT_HEADER;
-
-    setColors(initialColors);
-    setDesignState(initialDesign);
-    setHeaderState(initialHeader);
-    applyTheme(initialColors);
-    applyDesign(initialDesign);
-    applyHeader(initialHeader);
-    setReady(true);
-  }, []);
-
-  useEffect(() => {
-    if (!ready) return;
     applyTheme(colors);
     saveTheme(colors);
-  }, [colors, ready]);
+  }, [colors]);
 
   useEffect(() => {
-    if (!ready) return;
     applyDesign(design);
     saveDesign(design);
-  }, [design, ready]);
+  }, [design]);
 
   useEffect(() => {
-    if (!ready) return;
     applyHeader(header);
     saveHeader(header);
-  }, [header, ready]);
+  }, [header]);
 
   const setColor = useCallback((key: keyof ThemeColors, value: string) => {
     setColors((prev) => ({ ...prev, [key]: value }));

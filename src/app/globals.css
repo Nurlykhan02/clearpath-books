@@ -272,8 +272,8 @@ body::before {
   font-size: 0.98rem;
   line-height: 1.2;
   min-height: 44px;
-  padding: 0.95rem 1.6rem;
-  border-radius: var(--radius-s);
+  padding: 0.95rem 1.7rem;
+  border-radius: 999px;
   background: var(--bg);
   color: var(--fg);
   border: 1.5px solid transparent;
@@ -1972,46 +1972,14 @@ html[data-design="minimal"] .hero-visual {
   }
 }
 
-/* Mobile CTA bar */
+/* Mobile CTA bar (removed from layout; keep styles dormant) */
 .mobile-cta {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  display: none;
-  padding: 0.75rem var(--gutter);
-  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
-  background: linear-gradient(to top, color-mix(in srgb, var(--cream) 98%, transparent), color-mix(in srgb, var(--cream) 90%, transparent));
-  border-top: 1px solid var(--line);
-  backdrop-filter: blur(10px);
-}
-
-.mobile-cta .btn {
-  width: 100%;
-  justify-content: center;
-  padding: 0.92rem 1rem;
-  font-size: 0.92rem;
-  white-space: normal;
-  text-align: center;
-  line-height: 1.25;
+  display: none !important;
 }
 
 @media (max-width: 880px) {
   :root {
-    --mobile-bar-h: calc(62px + env(safe-area-inset-bottom, 0px));
-  }
-
-  .mobile-cta {
-    display: block;
-  }
-
-  .site-footer {
-    padding-bottom: calc(var(--mobile-bar-h) + 20px);
-  }
-
-  .cta-band {
-    padding-bottom: calc(var(--mobile-bar-h) + 40px) !important;
+    --mobile-bar-h: 0px;
   }
 }
 
@@ -2304,7 +2272,7 @@ html[data-design="minimal"] .hero-visual {
 
 @media (min-width: 760px) {
   .team__list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: start;
   }
 
@@ -2313,10 +2281,116 @@ html[data-design="minimal"] .hero-visual {
   }
 }
 
+@media (min-width: 1100px) {
+  .team__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .team-card__photo {
+    max-height: 320px;
+  }
+}
+
 @media (max-width: 759px) {
   .team__list {
     max-width: 560px;
     margin-inline: auto;
+  }
+}
+
+/* Home — lighter, less overloaded */
+.home-page .hero {
+  padding-block: clamp(40px, 6vw, 72px) clamp(36px, 5vw, 64px);
+}
+
+.home-page .hero .h-xl {
+  font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+}
+
+.home-page .hero__tag {
+  margin-bottom: 1.1rem;
+  font-size: 0.78rem;
+}
+
+.home-page .hero h1 {
+  margin-bottom: 0.95rem;
+}
+
+.home-page .hero__lede {
+  margin-bottom: 0;
+  font-size: clamp(0.98rem, 1.4vw, 1.12rem);
+  max-width: 42ch;
+}
+
+.home-page .hero__visual {
+  max-width: 380px;
+  margin-inline: auto;
+}
+
+.home-page .section {
+  padding-block: clamp(44px, 6vw, 80px);
+}
+
+.home-page .sec-head {
+  margin-bottom: clamp(24px, 3.5vw, 40px);
+}
+
+.home-page .sec-head .heading,
+.home-page .about-intro__inner .heading {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+}
+
+.home-page .lede,
+.home-page .about-intro__lede,
+.home-page .about-intro__clients {
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+}
+
+.home-page .team {
+  padding-top: clamp(20px, 3vw, 36px);
+}
+
+.home-page .team__list {
+  gap: clamp(24px, 4vw, 40px);
+}
+
+.home-page .team-card__photo {
+  max-height: 360px;
+  aspect-ratio: 4 / 4.6;
+}
+
+.home-page .team-card__body {
+  padding: clamp(16px, 2.4vw, 24px);
+}
+
+.home-page .team-card__name {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  margin-bottom: 0.7rem;
+}
+
+.home-page .team-card__title {
+  font-size: clamp(0.88rem, 1.2vw, 0.98rem);
+}
+
+.home-page .team-card__intro,
+.home-page .team-card__summary,
+.home-page .team-card__experiences p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.home-page .team-card__experiences {
+  gap: 0.85rem;
+}
+
+.home-page .team-card__company {
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
+
+@media (min-width: 760px) {
+  .home-page .team-card__photo {
+    max-height: 300px;
   }
 }
 
@@ -3209,7 +3283,7 @@ html[data-design="minimal"] body::before {
 
 html[data-design="solid"] .btn,
 html[data-design="minimal"] .btn {
-  border-radius: 6px;
+  border-radius: 999px;
 }
 
 html[data-design="solid"] .site-header .brand__mark,

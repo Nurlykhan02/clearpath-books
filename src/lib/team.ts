@@ -72,6 +72,34 @@ export const TEAM_MEMBERS: TeamMember[] = [
     summary:
       "Supporting day-to-day bookkeeping operations, maintaining financial records, processing transactions and assisting with accounting and reporting tasks. Detail-oriented and focused on accuracy, organization and timely completion of accounting processes.",
   },
+  {
+    id: "dana-petrova",
+    name: "Dana Petrova",
+    title: "Russian Language Specialist",
+    image: "/images/team/dana-petrova.jpg",
+    imageAlt: "Portrait of Dana Petrova, Russian Language Specialist",
+    intro: "4+ years of teaching experience in Russian language and literature.",
+    experiences: [
+      {
+        company: "Skyeng & Skysmart",
+        description:
+          "Russian Language Tutor, working with 25+ students and conducting up to 150 lessons per month.",
+      },
+      {
+        company: "Living Universe Private School",
+        description:
+          "Russian Language & Literature Teacher, including 9th-grade state exam preparation.",
+      },
+      {
+        company: "Nazarbayev University",
+        description: "BA in World Languages, Literatures and Cultures.",
+      },
+      {
+        company: "Languages",
+        description: "Russian (native), English (fluent), Kazakh (conversant).",
+      },
+    ],
+  },
 ];
 
 export const ABOUT_INTRO = {

@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { STORAGE_KEY } from "@/lib/theme";
 
 export default function ThemeInitScript() {
@@ -45,11 +44,5 @@ export default function ThemeInitScript() {
 })();
 `;
 
-  return (
-    <Script
-      id="theme-init"
-      strategy="beforeInteractive"
-      dangerouslySetInnerHTML={{ __html: script }}
-    />
-  );
+  return <script id="theme-init" dangerouslySetInnerHTML={{ __html: script }} />;
 }

@@ -33,10 +33,6 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     if (!open || !isMobile) return;
 
     const firstLink = linksRef.current?.querySelector<HTMLElement>("a");

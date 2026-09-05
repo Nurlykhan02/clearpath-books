@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 /** Blocks page flash; auto-releases after 3.5s if client JS is slow or blocked. */
 export default function SplashInitScript() {
   const script = `
@@ -14,11 +12,5 @@ export default function SplashInitScript() {
 })();
 `;
 
-  return (
-    <Script
-      id="splash-init"
-      strategy="beforeInteractive"
-      dangerouslySetInnerHTML={{ __html: script }}
-    />
-  );
+  return <script id="splash-init" dangerouslySetInnerHTML={{ __html: script }} />;
 }

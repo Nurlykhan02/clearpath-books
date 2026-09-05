@@ -5,11 +5,10 @@ import Services from "@/components/Services";
 import ProblemSection from "@/components/ProblemSection";
 import AboutIntro from "@/components/AboutIntro";
 import TeamProfiles from "@/components/TeamProfiles";
-import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
-    <>
+    <div className="home-page">
       <Hero />
       <Features />
       <TrustBar />
@@ -17,7 +16,6 @@ export default function Home() {
       <ProblemSection />
       <AboutIntro />
       <TeamProfiles />
-      <CTA />
-    </>
+    </div>
   );
 }

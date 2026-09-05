@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { DESIGN_STORAGE_KEY, DEFAULT_DESIGN } from "@/lib/design";
 import { HEADER_STORAGE_KEY, DEFAULT_HEADER } from "@/lib/header";
 
@@ -22,11 +21,5 @@ export default function DesignInitScript() {
 })();
 `;
 
-  return (
-    <Script
-      id="design-init"
-      strategy="beforeInteractive"
-      dangerouslySetInnerHTML={{ __html: script }}
-    />
-  );
+  return <script id="design-init" dangerouslySetInnerHTML={{ __html: script }} />;
 }
