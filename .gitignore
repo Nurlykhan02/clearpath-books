@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source photo drops (served copies live in public/images/team)
+/karla.jpeg
+/kamila.jpg
+/dana.jpg
+/dana_pertovna.jpeg

@@ -20,7 +20,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "karla-price",
     name: "Karla Price",
     title: "Accounting & Finance Specialist",
-    image: "/images/team/karla-price.svg",
+    image: "/images/team/karla-price.jpg",
     imageAlt: "Portrait of Karla Price, Accounting & Finance Specialist",
     intro: "20+ years of international accounting and finance experience, including:",
     experiences: [
@@ -48,7 +48,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "kamila-mamutova",
     name: "Kamila Mamutova",
     title: "Financial Analyst",
-    image: "/images/team/kamila-mamutova.svg",
+    image: "/images/team/kamila-mamutova.jpg",
     imageAlt: "Portrait of Kamila Mamutova, Financial Analyst",
     experiences: [
       {
@@ -67,7 +67,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "dana-toktarbayeva",
     name: "Dana Toktarbayeva",
     title: "Accounting Specialist",
-    image: "/images/team/dana-toktarbayeva.svg",
+    image: "/images/team/dana-toktarbayeva.jpg",
     imageAlt: "Portrait of Dana Toktarbayeva, Accounting Specialist",
     summary:
       "Supporting day-to-day bookkeeping operations, maintaining financial records, processing transactions and assisting with accounting and reporting tasks. Detail-oriented and focused on accuracy, organization and timely completion of accounting processes.",
