@@ -3,7 +3,6 @@ import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MobileCTABar from "@/components/MobileCTABar";
 import SplashInitScript from "@/components/SplashInitScript";
 import SplashLoader from "@/components/SplashLoader";
 import { COMPANY_NAME, COMPANY_TAGLINE } from "@/lib/site";
@@ -49,7 +48,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </main>
           <Footer />
         </div>
-        <MobileCTABar />
       </body>
     </html>
   );
