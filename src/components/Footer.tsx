@@ -9,11 +9,11 @@ export default function Footer() {
           <div className="footer__brand">
             <Link href="/" className="brand" aria-label={`${COMPANY_NAME} home`}>
               <span className="brand__mark" aria-hidden="true">
-                C
+                {COMPANY_SHORT.slice(0, 1)}
               </span>
               <span className="brand__name">
                 {COMPANY_SHORT}
-                <span> Books</span>
+                <span> Bookkeeping</span>
               </span>
             </Link>
             <p>Your books, finally under control.</p>

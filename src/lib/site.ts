@@ -1,5 +1,5 @@
-export const COMPANY_NAME = "ClearPath Books";
-export const COMPANY_SHORT = "ClearPath";
+export const COMPANY_NAME = "Sheep Bookkeeping";
+export const COMPANY_SHORT = "Sheep";
 export const COMPANY_TAGLINE =
   "Trusted bookkeeping & accounting support for U.S. businesses";
 export const COMPANY_EMAIL = "hello@clearpathbooks.com";

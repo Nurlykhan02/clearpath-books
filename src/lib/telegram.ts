@@ -1,3 +1,5 @@
+import { COMPANY_NAME } from "@/lib/site";
+
 type ConsultationPayload = {
   name: string;
   email: string;
@@ -21,7 +23,7 @@ export function formatConsultationMessage(data: ConsultationPayload) {
 
   const blocks = [
     "📋 <b>New Consultation Request</b>",
-    `<i>${now} ET · ClearPath Books</i>`,
+    `<i>${now} ET · ${COMPANY_NAME}</i>`,
     "",
     "─────────────────",
     "",

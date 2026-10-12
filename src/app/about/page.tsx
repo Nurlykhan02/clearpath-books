@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import { COMPANY_NAME } from "@/lib/site";
 import Blob, { BLOB_PATHS } from "@/components/Blob";
 import CTA from "@/components/CTA";
 import AboutIntro from "@/components/AboutIntro";
@@ -17,7 +18,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="page-hero__inner">
               <span className="eyebrow">About Us</span>
-              <h1 className="heading h-l">Meet the team behind ClearPath Books</h1>
+              <h1 className="heading h-l">Meet the team behind {COMPANY_NAME}</h1>
               <p>
                 International accounting backgrounds, now focused on U.S. small
                 business bookkeeping and financial clarity.
