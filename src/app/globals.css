@@ -85,8 +85,8 @@
   --maxw: 1180px;
   --gutter: clamp(20px, 5vw, 56px);
   --mobile-bar-h: 0px;
-  --serif: var(--font-display), Fraunces, Georgia, "Times New Roman", serif;
-  --sans: var(--font-sans), "Hanken Grotesk", "Segoe UI", Helvetica, sans-serif;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Hanken Grotesk", "Segoe UI", Helvetica, sans-serif;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 

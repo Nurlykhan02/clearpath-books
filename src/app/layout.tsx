@@ -1,26 +1,10 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SplashInitScript from "@/components/SplashInitScript";
 import SplashLoader from "@/components/SplashLoader";
 import { COMPANY_NAME, COMPANY_TAGLINE } from "@/lib/site";
-
-const display = Fraunces({
-  variable: "--font-display",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  style: ["normal", "italic"],
-  axes: ["SOFT", "WONK", "opsz"],
-});
-
-const sans = Hanken_Grotesk({
-  variable: "--font-sans",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: `${COMPANY_NAME} — Your books, finally under control.`,
@@ -29,11 +13,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${display.variable} ${sans.variable} h-full scroll-smooth antialiased`}
-    >
+    <html lang="en" className="h-full scroll-smooth antialiased">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <SplashInitScript />
       </head>
       <body>
