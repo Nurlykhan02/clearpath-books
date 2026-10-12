@@ -27,18 +27,14 @@ export default function Hero() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="heading h-xl">
-                Your books, finally <em>under control.</em>
+                Big-company expertise. <em>Built for small business</em>
               </h1>
             </Reveal>
             <Reveal delay={0.16}>
               <p className="lede hero__lede">
-                Reliable bookkeeping and accounting services for small businesses
-                that want accurate numbers, fewer headaches, and more time to focus
-                on running the business.
-              </p>
-              <p className="lede" style={{ marginTop: "1rem", fontSize: "1.05rem" }}>
-                We keep your books organized, your financials clear, and your
-                business moving forward.
+                Sheep Bookkeeping is an expert-led bookkeeping firm built on
+                big-company experience: deep accounting knowledge, proven
+                processes, and financials you can trust.
               </p>
             </Reveal>
             <Reveal delay={0.24}>
