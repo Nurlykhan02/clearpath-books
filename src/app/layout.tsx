@@ -1,26 +1,26 @@
 import type { Metadata } from "next";
-import { DM_Sans, Source_Serif_4 } from "next/font/google";
+import { Fraunces, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import ThemeCustomizer from "@/components/ThemeCustomizer";
-import ThemeInitScript from "@/components/ThemeInitScript";
-import DesignInitScript from "@/components/DesignInitScript";
+import MobileCTABar from "@/components/MobileCTABar";
 import SplashInitScript from "@/components/SplashInitScript";
 import SplashLoader from "@/components/SplashLoader";
 import { COMPANY_NAME, COMPANY_TAGLINE } from "@/lib/site";
 
-const display = Source_Serif_4({
+const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
 });
 
-const sans = DM_Sans({
+const sans = Hanken_Grotesk({
   variable: "--font-sans",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -32,30 +32,24 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      data-design="organic"
-      data-header="navy"
       className={`${display.variable} ${sans.variable} h-full scroll-smooth antialiased`}
     >
       <head>
-        <DesignInitScript />
-        <ThemeInitScript />
         <SplashInitScript />
       </head>
       <body>
-        <ThemeProvider>
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
-          <SplashLoader />
-          <div className="page" id="site-page">
-            <Header />
-            <main id="main-content" tabIndex={-1}>
-              {children}
-            </main>
-            <Footer />
-          </div>
-          <ThemeCustomizer />
-        </ThemeProvider>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <SplashLoader />
+        <div className="page" id="site-page">
+          <Header />
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
+          <Footer />
+        </div>
+        <MobileCTABar />
       </body>
     </html>
   );

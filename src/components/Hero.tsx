@@ -1,11 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import Reveal from "./Reveal";
-import HeroVisual from "./HeroVisual";
 import Blob, { BLOB_PATHS } from "./Blob";
 import { COMPANY_TAGLINE } from "@/lib/site";
-import { IconTaxForm } from "@/lib/icons";
 
 export default function Hero() {
   return (
@@ -13,17 +9,12 @@ export default function Hero() {
       <Blob
         variant="warm"
         path={BLOB_PATHS.clay}
-        style={{ top: -60, right: -40, width: 180, height: 180, opacity: 0.42 }}
+        style={{ top: -140, right: -120, width: 520, height: 520, opacity: 0.55 }}
       />
       <Blob
         variant="sage"
         path={BLOB_PATHS.sage}
-        style={{ top: 40, right: 120, width: 110, height: 110, opacity: 0.3 }}
-      />
-      <Blob
-        variant="sage"
-        path={BLOB_PATHS.sageAlt}
-        style={{ bottom: -60, left: -50, width: 180, height: 180, opacity: 0.28 }}
+        style={{ bottom: -180, left: -140, width: 460, height: 460, opacity: 0.4 }}
       />
 
       <div className="wrap">
@@ -31,10 +22,7 @@ export default function Hero() {
           <div className="hero__copy">
             <Reveal>
               <span className="hero__tag">
-                <b aria-hidden="true">
-                  <IconTaxForm style={{ width: 14, height: 14 }} />
-                </b>{" "}
-                {COMPANY_TAGLINE}
+                <b aria-hidden="true">★</b> {COMPANY_TAGLINE}
               </span>
             </Reveal>
             <Reveal delay={0.08}>
@@ -44,19 +32,24 @@ export default function Hero() {
             </Reveal>
             <Reveal delay={0.16}>
               <p className="lede hero__lede">
-                Reliable bookkeeping and accounting for small businesses — clear
-                numbers, fewer headaches, more time to run the company.
+                Reliable bookkeeping and accounting services for small businesses
+                that want accurate numbers, fewer headaches, and more time to focus
+                on running the business.
+              </p>
+              <p className="lede" style={{ marginTop: "1rem", fontSize: "1.05rem" }}>
+                We keep your books organized, your financials clear, and your
+                business moving forward.
               </p>
             </Reveal>
             <Reveal delay={0.24}>
               <div className="hero__cta">
-                <Link href="/contact" className="btn btn--sm">
+                <Link href="/contact" className="btn">
                   Book a Free Consultation{" "}
                   <span className="arr" aria-hidden="true">
                     →
                   </span>
                 </Link>
-                <Link href="/services" className="btn btn--ghost btn--sm">
+                <Link href="/services" className="btn btn--ghost">
                   Explore Our Services
                 </Link>
               </div>
@@ -64,7 +57,16 @@ export default function Hero() {
           </div>
 
           <Reveal delay={0.18} className="hero__visual" aria-hidden="true">
-            <HeroVisual />
+            <div className="hero__blobcard" />
+            <div className="hero__chip hero__chip--tl">
+              <h4>Accurate &amp; Organized</h4>
+              <p>Clean books. Current numbers.</p>
+            </div>
+            <div className="hero__chip hero__chip--br">
+              <span className="stars">★★★★★</span>
+              <h4>99% client satisfaction</h4>
+              <p>U.S. small businesses</p>
+            </div>
           </Reveal>
         </div>
       </div>
